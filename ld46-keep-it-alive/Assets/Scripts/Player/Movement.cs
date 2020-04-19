@@ -22,8 +22,6 @@ public class Movement : MonoBehaviour
 
 	void Start()
 	{
-		//_rigidbody2d = GetComponent<Rigidbody2D>();
-
 		transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0);
 		_currentPosition = transform.position;
 
@@ -63,9 +61,6 @@ public class Movement : MonoBehaviour
 			}
 		}
 
-		//_rigidbody2d.MovePosition(new Vector2(transform.position.x, transform.position.y) + _inputDirection * MovementSpeed * Time.deltaTime);
-
-		// Somente quando chegar na posição target
 		if (transform.position == _targetposition)
 		{
 			_currentPosition = transform.position;
@@ -75,32 +70,13 @@ public class Movement : MonoBehaviour
 
 	public void OnMovement(InputAction.CallbackContext context)
 	{
-		Debug.Log($"OnMovement: {context.phase}, value: {context.ReadValue<Vector2>()}");
-
 		if (context.canceled) _inputDirection = Vector2.zero;
-
-		//_inputDirection = context.ReadValue<Vector2>();
-
-		//if (_inputDirection == Vector2.zero) return;
-
-		//if (Mathf.Abs(_inputDirection.x) > Mathf.Abs(_inputDirection.y))
-		//{
-		//	_inputDirection.x = 1 * Mathf.Sign(_inputDirection.x);
-		//	_inputDirection.y = 0;
-		//}
-		//else
-		//{
-		//	_inputDirection.x = 0;
-		//	_inputDirection.y = 1 * Mathf.Sign(_inputDirection.y);
-		//}
 	}
 
 	private bool _turning;
 
 	public void OnTurn(InputAction.CallbackContext context)
 	{
-		Debug.Log($"OnTurn: {context.phase}, value: {context.ReadValue<Vector2>()}");
-
 		if (context.started)
 		{
 			_turning = true;
