@@ -3,8 +3,14 @@
 public enum ItemType
 {
 	None,
-	Object1,
-	Object2,
+	Bascketball,
+	Globe,
+	Book,
+	Camera,
+	Rocket,
+	Microscope,
+	Erlenmeyer,
+	Magnet
 }
 
 [System.Serializable]
@@ -20,6 +26,8 @@ public class Inventory : MonoBehaviour
 
 	public float Offset = 1f;
 
+	public Animator PlayerAnimator;
+
 	public ItemType CurrentObjectType { get; set; }
 
 	public GameItem[] ItemPrefabs;
@@ -32,12 +40,14 @@ public class Inventory : MonoBehaviour
 	public void GetObject(ItemType objectType)
 	{
 		CurrentObjectType = objectType;
+		PlayerAnimator.SetBool("Carrying", true);
 	}
 
 	public void DropObject()
 	{
 		Instantiate(GetCurrentPrefab(), transform.position + (new Vector3(PlayerMovement.LookDirection.x, PlayerMovement.LookDirection.y, 0) * Offset), Quaternion.identity);
 		CurrentObjectType = ItemType.None;
+		PlayerAnimator.SetBool("Carrying", false);
 	}
 
 	private GameObject GetCurrentPrefab()

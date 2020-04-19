@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2884517893403494031}
   - component: {fileID: 2884517893403494026}
   - component: {fileID: 2884517893403494027}
+  - component: {fileID: 1794540242}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -73,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b07fd2aeaa17b3c478bed7b416cc7130, type: 3}
+  m_SortingLayerID: 335108311
+  m_SortingLayer: 1
+  m_SortingOrder: 12
+  m_Sprite: {fileID: 21300000, guid: 6b1ad8b53a683934b87cfffb5fb4025f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ab95e61d4367e4cb0d8fdc1817c75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
+  MovementSpeed: 4
+  PlayerAnimator: {fileID: 1794540242}
 --- !u!114 &2884517893403494037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerInventory: {fileID: 2884517893403494036}
   PlayerMovement: {fileID: 2884517893403494030}
+  PlayerInput: {fileID: 2884517893403494031}
 --- !u!114 &2884517893403494036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +131,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMovement: {fileID: 2884517893403494030}
   Offset: 1
+  PlayerAnimator: {fileID: 1794540242}
   ItemPrefabs:
   - ItemType: 1
     Prefab: {fileID: 433074099330937563, guid: e3af2895a1c7e1341a6ebacbcfd29710, type: 3}
   - ItemType: 2
     Prefab: {fileID: 3410832385248667770, guid: 041293ec93140324e96a3b31cf97ca59,
+      type: 3}
+  - ItemType: 3
+    Prefab: {fileID: 3410832385248667770, guid: 144df432447e994438425069c2361622,
+      type: 3}
+  - ItemType: 4
+    Prefab: {fileID: 3410832385248667770, guid: 76e30ba23f36b384386cd6d78db633be,
+      type: 3}
+  - ItemType: 5
+    Prefab: {fileID: 3410832385248667770, guid: 315dedd49cdbcfb47a8ea18ed06067e9,
+      type: 3}
+  - ItemType: 6
+    Prefab: {fileID: 3410832385248667770, guid: d823d00d8aa60784ebc8730071b5c67d,
+      type: 3}
+  - ItemType: 7
+    Prefab: {fileID: 3410832385248667770, guid: efb9855c4ca2a9948a86891fb1c9269e,
+      type: 3}
+  - ItemType: 8
+    Prefab: {fileID: 3410832385248667770, guid: ca9e61e4a6745a94daaa536e6cf24684,
       type: 3}
 --- !u!114 &2884517893403494031
 MonoBehaviour:
@@ -205,6 +227,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7e48442a-933c-4a05-ad03-13b2dfa16214
     m_ActionName: PlayerActions/Turn[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: OnNext
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6677dbe5-38c2-46bc-897e-e63f64f2e607
+    m_ActionName: DialogActions/Next[/Keyboard/anyKey,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -247,3 +284,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &1794540242
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884517893403494028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec61ba1774b0433468028983219e6d5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

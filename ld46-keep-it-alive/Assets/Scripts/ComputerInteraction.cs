@@ -25,7 +25,7 @@ public class ComputerInteraction : MonoBehaviour, IInteractable
 
 			foreach (var platform in allPlatforms)
 			{
-				if (currentPlatform.CurrentItemOnPlatform == platform.CurrentItemOnPlatform)
+				if (currentPlatform.CurrentItemOnPlatform == platform.PlatformItemType)
 				{
 					objectCount++;
 					break;

@@ -11,6 +11,12 @@ public class Interaction : MonoBehaviour
 
 	public Movement PlayerMovement;
 
+	public PlayerInput PlayerInput;
+
+	public DialogueBox DialogueBox;
+
+	public static string[] Layers = new string[] { "Level", "Interaction" };
+
 	private void Awake()
 	{
 		CanInteract = true;
@@ -21,7 +27,7 @@ public class Interaction : MonoBehaviour
 		if (!context.performed || PlayerMovement.IsMoving) return;
 
 		var swipePosition = new Vector2(transform.position.x, transform.position.y) + PlayerMovement.LookDirection;
-		var col = Physics2D.OverlapPoint(swipePosition, LayerMask.GetMask(Movement.Layers));
+		var col = Physics2D.OverlapPoint(swipePosition, LayerMask.GetMask(Layers));
 
 		if (PlayerInventory.CurrentObjectType == ItemType.None)
 		{
@@ -32,6 +38,8 @@ public class Interaction : MonoBehaviour
 			if (_interactableTarget != null)
 			{
 				_interactableTarget.Interact();
+				DialogueBox.ShowDialogueBox(new string[] { "test1", "test2" });
+				PlayerInput.SwitchCurrentActionMap("DialogActions");
 			}
 		}
 		else

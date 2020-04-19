@@ -318,6 +318,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "DialogActions",
+            "id": "5fc66543-7321-4865-9ea3-0e0c1cc7cf91",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "6677dbe5-38c2-46bc-897e-e63f64f2e607",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "371fe668-fac0-4bc3-8058-85a73d445333",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1f2c875-f795-4e49-a695-53f2a6a39606",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

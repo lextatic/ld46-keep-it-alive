@@ -11,6 +11,33 @@ TextureImporter:
   - first:
       213: 8697553026447667578
     second: wall_shadows_2
+  - first:
+      213: -8840952537906126034
+    second: wall_shadows_0
+  - first:
+      213: 4093807192500860496
+    second: wall_shadows_1
+  - first:
+      213: -6653524392310781975
+    second: wall_shadows_2
+  - first:
+      213: -328002296481997140
+    second: wall_shadows_3
+  - first:
+      213: 3936313809338186192
+    second: wall_shadows_4
+  - first:
+      213: 7662262816989669709
+    second: wall_shadows_5
+  - first:
+      213: 3103470849153265918
+    second: wall_shadows_6
+  - first:
+      213: 5847910470145045425
+    second: wall_shadows_7
+  - first:
+      213: -4848073351514429177
+    second: wall_shadows_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,6 +139,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2364061280ae4580800000000000000
+      internalID: -8840952537906126034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056f3ff93ff10d830800000000000000
+      internalID: 4093807192500860496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e74beb21dee9a3a0800000000000000
+      internalID: -6653524392310781975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -122,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d90344e336650e0800000000000000
-      internalID: -2281527042133418693
+      spriteID: cae9da036a3b27bf0800000000000000
+      internalID: -328002296481997140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_shadows_1
+      name: wall_shadows_4
       rect:
         serializedVersion: 2
         x: 32
@@ -143,14 +233,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70a962d1cf12678e0800000000000000
-      internalID: -1696130842953868793
+      spriteID: 0d9311add8890a630800000000000000
+      internalID: 3936313809338186192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_shadows_2
+      name: wall_shadows_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d496a568f63d55a60800000000000000
+      internalID: 7662262816989669709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_6
       rect:
         serializedVersion: 2
         x: 0
@@ -164,8 +275,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a71798c556ae3b870800000000000000
-      internalID: 8697553026447667578
+      spriteID: ef07f8e5b4eb11b20800000000000000
+      internalID: 3103470849153265918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3784bc693f72150800000000000000
+      internalID: 5847910470145045425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_shadows_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709e1f519fe28bcb0800000000000000
+      internalID: -4848073351514429177
       vertices: []
       indices: 
       edges: []

@@ -6,6 +6,8 @@ public class Movement : MonoBehaviour
 {
 	public float MovementSpeed = 5f;
 
+	public Animator PlayerAnimator;
+
 	public Vector2 LookDirection { get; private set; }
 
 	public bool IsMoving { get; private set; }
@@ -18,12 +20,15 @@ public class Movement : MonoBehaviour
 
 	private Vector2 _currentDirection;
 
-	public static string[] Layers = new string[] { "Level", "Interaction" };
+	public static string[] Layers = new string[] { "Level", "Interaction", "Table" };
 
 	void Start()
 	{
 		transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0);
 		_currentPosition = transform.position;
+		LookDirection = new Vector2(0, -1);
+		PlayerAnimator.SetBool("Walking", false);
+		PlayerAnimator.SetInteger("Direction", 0);
 
 		IsMoving = false;
 	}
@@ -41,6 +46,29 @@ public class Movement : MonoBehaviour
 					_currentDirection = _inputDirection;
 					_targetposition = swipePosition;
 					IsMoving = true;
+					PlayerAnimator.SetBool("Walking", true);
+
+					if (LookDirection.x > 0)
+					{
+						PlayerAnimator.SetInteger("Direction", 2);
+						transform.localScale = new Vector3(1, 1, 1);
+					}
+					else if (LookDirection.x < 0)
+					{
+						PlayerAnimator.SetInteger("Direction", 2);
+						transform.localScale = new Vector3(-1, 1, 1);
+					}
+
+					if (LookDirection.y > 0)
+					{
+						PlayerAnimator.SetInteger("Direction", 1);
+						transform.localScale = new Vector3(1, 1, 1);
+					}
+					else if (LookDirection.y < 0)
+					{
+						PlayerAnimator.SetInteger("Direction", 0);
+						transform.localScale = new Vector3(1, 1, 1);
+					}
 				}
 
 				LookDirection = _inputDirection;
@@ -64,6 +92,12 @@ public class Movement : MonoBehaviour
 		if (transform.position == _targetposition)
 		{
 			_currentPosition = transform.position;
+
+			if (_inputDirection == Vector2.zero)
+			{
+				PlayerAnimator.SetBool("Walking", false);
+			}
+
 			IsMoving = false;
 		}
 	}
@@ -79,11 +113,6 @@ public class Movement : MonoBehaviour
 	{
 		if (context.started)
 		{
-			_turning = true;
-
-			_inputDirection = context.ReadValue<Vector2>();
-			LookDirection = _inputDirection;
-
 			_inputDirection = context.ReadValue<Vector2>();
 
 			if (_inputDirection == Vector2.zero) return;
@@ -93,10 +122,51 @@ public class Movement : MonoBehaviour
 				_inputDirection.x = 1 * Mathf.Sign(_inputDirection.x);
 				_inputDirection.y = 0;
 			}
+			else if (Mathf.Abs(_inputDirection.x) == Mathf.Abs(_inputDirection.y))
+			{
+				if (_inputDirection.x != LookDirection.x)
+				{
+					_inputDirection.x = 1 * Mathf.Sign(_inputDirection.x);
+					_inputDirection.y = 0;
+				}
+				else
+				{
+					_inputDirection.x = 0;
+					_inputDirection.y = 1 * Mathf.Sign(_inputDirection.y);
+				}
+			}
 			else
 			{
 				_inputDirection.x = 0;
 				_inputDirection.y = 1 * Mathf.Sign(_inputDirection.y);
+			}
+
+			LookDirection = _inputDirection;
+
+			if (IsMoving) return;
+
+			_turning = true;
+
+			if (LookDirection.x > 0)
+			{
+				PlayerAnimator.SetInteger("Direction", 2);
+				transform.localScale = new Vector3(1, 1, 1);
+			}
+			else if (LookDirection.x < 0)
+			{
+				PlayerAnimator.SetInteger("Direction", 2);
+				transform.localScale = new Vector3(-1, 1, 1);
+			}
+
+			if (LookDirection.y > 0)
+			{
+				PlayerAnimator.SetInteger("Direction", 1);
+				transform.localScale = new Vector3(1, 1, 1);
+			}
+			else if (LookDirection.y < 0)
+			{
+				PlayerAnimator.SetInteger("Direction", 0);
+				transform.localScale = new Vector3(1, 1, 1);
 			}
 		}
 		else
