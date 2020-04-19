@@ -14,6 +14,33 @@ TextureImporter:
   - first:
       213: -6706006082964166392
     second: Rug_3
+  - first:
+      213: -8849873222788350964
+    second: Rug_0
+  - first:
+      213: 2672311639867188152
+    second: Rug_1
+  - first:
+      213: 981507195031428193
+    second: Rug_2
+  - first:
+      213: 5175056256286951341
+    second: Rug_3
+  - first:
+      213: -1413759066434523186
+    second: Rug_4
+  - first:
+      213: -5249136370608596915
+    second: Rug_5
+  - first:
+      213: 8628347304096473634
+    second: Rug_6
+  - first:
+      213: -889691741303211646
+    second: Rug_7
+  - first:
+      213: -5657033389100765389
+    second: Rug_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,6 +142,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c7578413fee2580800000000000000
+      internalID: -8849873222788350964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rug_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3ec672745f51520800000000000000
+      internalID: 2672311639867188152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rug_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c9658f7930f9d00800000000000000
+      internalID: 981507195031428193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rug_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -125,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47cb7d0c0369b920800000000000000
-      internalID: 3006543129663489866
+      spriteID: da785a81f3e71d740800000000000000
+      internalID: 5175056256286951341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rug_1
+      name: Rug_4
       rect:
         serializedVersion: 2
         x: 32
@@ -146,14 +236,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 304c791efc565c4b0800000000000000
-      internalID: -5420814632953068541
+      spriteID: ecfae279e91516ce0800000000000000
+      internalID: -1413759066434523186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rug_2
+      name: Rug_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d489a4438425727b0800000000000000
+      internalID: -5249136370608596915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rug_6
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb441ac8fe9f62130800000000000000
-      internalID: 3541792964225352895
+      spriteID: 222ae5b782c0eb770800000000000000
+      internalID: 8628347304096473634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rug_3
+      name: Rug_7
       rect:
         serializedVersion: 2
         x: 32
@@ -188,8 +299,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 809ef4b5ffa7fe2a0800000000000000
-      internalID: -6706006082964166392
+      spriteID: 289f508331e27a3f0800000000000000
+      internalID: -889691741303211646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rug_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33fef18da1e2e71b0800000000000000
+      internalID: -5657033389100765389
       vertices: []
       indices: 
       edges: []
