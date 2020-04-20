@@ -17,10 +17,4 @@ public class OffsetObjectViewOnTables : MonoBehaviour
 			View.transform.Translate(Offset);
 		}
 	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
 }

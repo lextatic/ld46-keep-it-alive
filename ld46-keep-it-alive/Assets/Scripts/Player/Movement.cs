@@ -8,6 +8,10 @@ public class Movement : MonoBehaviour
 
 	public Animator PlayerAnimator;
 
+	public AudioSource AudioSource;
+
+	public SimpleAudioEvent FootstepSound;
+
 	public Vector2 LookDirection { get; private set; }
 
 	public bool IsMoving { get; private set; }
@@ -22,13 +26,16 @@ public class Movement : MonoBehaviour
 
 	public static string[] Layers = new string[] { "Level", "Interaction", "Table" };
 
+	public void PlayFootstepSound()
+	{
+		FootstepSound.Play(AudioSource);
+	}
+
 	void Start()
 	{
 		transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0);
 		_currentPosition = transform.position;
-		LookDirection = new Vector2(0, -1);
 		PlayerAnimator.SetBool("Walking", false);
-		PlayerAnimator.SetInteger("Direction", 0);
 
 		IsMoving = false;
 	}
@@ -48,27 +55,7 @@ public class Movement : MonoBehaviour
 					IsMoving = true;
 					PlayerAnimator.SetBool("Walking", true);
 
-					if (LookDirection.x > 0)
-					{
-						PlayerAnimator.SetInteger("Direction", 2);
-						transform.localScale = new Vector3(1, 1, 1);
-					}
-					else if (LookDirection.x < 0)
-					{
-						PlayerAnimator.SetInteger("Direction", 2);
-						transform.localScale = new Vector3(-1, 1, 1);
-					}
-
-					if (LookDirection.y > 0)
-					{
-						PlayerAnimator.SetInteger("Direction", 1);
-						transform.localScale = new Vector3(1, 1, 1);
-					}
-					else if (LookDirection.y < 0)
-					{
-						PlayerAnimator.SetInteger("Direction", 0);
-						transform.localScale = new Vector3(1, 1, 1);
-					}
+					UpdateLookSprite();
 				}
 
 				LookDirection = _inputDirection;
@@ -147,31 +134,42 @@ public class Movement : MonoBehaviour
 
 			_turning = true;
 
-			if (LookDirection.x > 0)
-			{
-				PlayerAnimator.SetInteger("Direction", 2);
-				transform.localScale = new Vector3(1, 1, 1);
-			}
-			else if (LookDirection.x < 0)
-			{
-				PlayerAnimator.SetInteger("Direction", 2);
-				transform.localScale = new Vector3(-1, 1, 1);
-			}
-
-			if (LookDirection.y > 0)
-			{
-				PlayerAnimator.SetInteger("Direction", 1);
-				transform.localScale = new Vector3(1, 1, 1);
-			}
-			else if (LookDirection.y < 0)
-			{
-				PlayerAnimator.SetInteger("Direction", 0);
-				transform.localScale = new Vector3(1, 1, 1);
-			}
+			UpdateLookSprite();
 		}
 		else
 		{
 			_turning = false;
 		}
+	}
+
+	private void UpdateLookSprite()
+	{
+		if (LookDirection.x > 0)
+		{
+			PlayerAnimator.SetInteger("Direction", 2);
+			transform.localScale = new Vector3(1, 1, 1);
+		}
+		else if (LookDirection.x < 0)
+		{
+			PlayerAnimator.SetInteger("Direction", 2);
+			transform.localScale = new Vector3(-1, 1, 1);
+		}
+
+		if (LookDirection.y > 0)
+		{
+			PlayerAnimator.SetInteger("Direction", 1);
+			transform.localScale = new Vector3(1, 1, 1);
+		}
+		else if (LookDirection.y < 0)
+		{
+			PlayerAnimator.SetInteger("Direction", 0);
+			transform.localScale = new Vector3(1, 1, 1);
+		}
+	}
+
+	public void SetLookDirection(Vector2 direction)
+	{
+		LookDirection = direction;
+		UpdateLookSprite();
 	}
 }

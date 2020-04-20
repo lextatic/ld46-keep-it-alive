@@ -11,10 +11,6 @@ public class Interaction : MonoBehaviour
 
 	public Movement PlayerMovement;
 
-	public PlayerInput PlayerInput;
-
-	public DialogueBox DialogueBox;
-
 	public static string[] Layers = new string[] { "Level", "Interaction" };
 
 	private void Awake()
@@ -38,8 +34,6 @@ public class Interaction : MonoBehaviour
 			if (_interactableTarget != null)
 			{
 				_interactableTarget.Interact();
-				DialogueBox.ShowDialogueBox(new string[] { "test1", "test2" });
-				PlayerInput.SwitchCurrentActionMap("DialogActions");
 			}
 		}
 		else

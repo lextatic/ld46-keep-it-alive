@@ -32,6 +32,10 @@ public class Inventory : MonoBehaviour
 
 	public GameItem[] ItemPrefabs;
 
+	public AudioSource AudioSource;
+
+	public SimpleAudioEvent DropObjectAudio;
+
 	public void Awake()
 	{
 		CurrentObjectType = ItemType.None;
@@ -45,6 +49,7 @@ public class Inventory : MonoBehaviour
 
 	public void DropObject()
 	{
+		DropObjectAudio.Play(AudioSource);
 		Instantiate(GetCurrentPrefab(), transform.position + (new Vector3(PlayerMovement.LookDirection.x, PlayerMovement.LookDirection.y, 0) * Offset), Quaternion.identity);
 		CurrentObjectType = ItemType.None;
 		PlayerAnimator.SetBool("Carrying", false);
